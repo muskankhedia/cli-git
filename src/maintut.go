@@ -17,7 +17,7 @@ type repoDetail struct {
 	URL     string `json:"url"`
 	PR      string `json:"pr"`
 	Issues  string `json:"issues"`
-	Visited int `json:"visited"`
+	Visited int    `json:"visited"`
 }
 
 type repoDetails struct {
@@ -70,11 +70,20 @@ func main() {
 	{{ .URL | truncate 80 }}`,
 		}
 
+		selectKeys := promptui.SelectKeys{
+			Prev:     promptui.Key{Code: promptui.KeyPrev, Display: promptui.KeyPrevDisplay},
+			Next:     promptui.Key{Code: promptui.KeyNext, Display: promptui.KeyNextDisplay},
+			PageUp:   promptui.Key{Code: KeyBackward, Display: KeyBackwardDisplay},
+			PageDown: promptui.Key{Code: KeyForward, Display: KeyForwardDisplay},
+			Search:   promptui.Key{Code: '/', Display: "/"},
+		}
+
 		list := promptui.Select{
 			Label:             "Repo",
 			Items:             res.Details,
 			Templates:         &templates,
 			StartInSearchMode: true,
+			Keys:              &selectKeys,
 			Searcher: func(input string, idx int) bool {
 				repo := res.Details[idx]
 				title := strings.ToLower(repo.Name)
