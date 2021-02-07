@@ -5,8 +5,6 @@ import (
 	"github.com/mbndr/figlet4go"
 )
 
-// ...
-
 func projectText() {
 
 	ascii := figlet4go.NewAsciiRender()

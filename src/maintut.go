@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/json"
-	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -33,38 +32,13 @@ func main() {
 	projectText()
 
 	content, err := ioutil.ReadFile("store.json")
-		if err != nil {
-			log.Fatal(err)
-		}
+	if err != nil {
+		log.Fatal(err)
+	}
 
-		_ = json.Unmarshal([]byte(content), &res)
+	_ = json.Unmarshal([]byte(content), &res)
 
 	for {
-		// Prompts the user to search for the repository
-		prompt := promptui.Prompt{
-			Label: "Search",
-			Validate: func(input string) error {
-				if len(input) < 3 {
-					return errors.New("Search term must have at least 3 characters")
-				}
-				return nil
-			},
-		}
-
-		// Runs the searched word
-		keyword, err := prompt.Run()
-		if err != nil {
-			fmt.Println(err)
-			os.Exit(1)
-		}
-
-		var selectedRepos []repoDetail
-
-		for i := 0; i < len(res.Details); i++ {
-			if strings.Contains(res.Details[i].Name, keyword) {
-				selectedRepos = append(selectedRepos, res.Details[i])
-			}
-		}
 
 		funcMap := promptui.FuncMap
 		funcMap["truncate"] = func(size int, input string) string {
@@ -89,16 +63,13 @@ func main() {
 
 		list := promptui.Select{
 			Label:     "Repo",
-			Items:     selectedRepos,
+			Items:     res.Details,
 			Templates: &templates,
+			StartInSearchMode: true,
 			Searcher: func(input string, idx int) bool {
-				recipe := selectedRepos[idx]
-				title := strings.ToLower(recipe.Name)
-				fmt.Println("input: ", input)
+				repo := res.Details[idx]
+				title := strings.ToLower(repo.Name)
 				if strings.Contains(title, input) {
-					return true
-				}
-				if strings.Contains(recipe.URL, input) {
 					return true
 				}
 				return false
@@ -111,7 +82,7 @@ func main() {
 			os.Exit(1)
 		}
 
-		fmt.Println(selectedRepos[idx].URL)
+		fmt.Println(res.Details[idx].URL)
 	}
 
 }
