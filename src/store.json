@@ -1,0 +1,26 @@
+{
+  "repos": [
+    {
+      "name": "facebook-php-sdk",
+      "url": "https://github.com/interviewstreet/facebook-php-sdk",
+      "pr": "https://github.com/interviewstreet/facebook-php-sdk/pulls",
+      "issues": "https://github.com/interviewstreet/facebook-php-sdk/issues",
+      "visited": 0
+    },
+    {
+      "name": "facebook",
+      "url": "https://github.com/interviewstreet/facebook-php-sdk",
+      "pr": "https://github.com/interviewstreet/facebook-php-sdk/pulls",
+      "issues": "https://github.com/interviewstreet/facebook-php-sdk/issues",
+      "visited": 0
+    },
+    {
+      "name": "sample",
+      "url": "https://github.com/interviewstreet/sample",
+      "pr": "https://github.com/interviewstreet/sample/pulls",
+      "issues": "https://github.com/interviewstreet/sample/issues",
+      "visited": 0
+    }
+  ]
+    
+}
