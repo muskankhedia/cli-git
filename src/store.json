@@ -166,7 +166,7 @@
       "url": "https://github.com/interviewstreet/es6features",
       "pr": "https://github.com/interviewstreet/es6features/pulls",
       "issues": "https://github.com/interviewstreet/es6features/issues",
-      "visited": 1
+      "visited": 0
     },
     {
       "name": "es6-cheatsheet",
@@ -180,7 +180,7 @@
       "url": "https://github.com/interviewstreet/es6",
       "pr": "https://github.com/interviewstreet/es6/pulls",
       "issues": "https://github.com/interviewstreet/es6/issues",
-      "visited": 3
+      "visited": 0
     },
     {
       "name": "javascript",

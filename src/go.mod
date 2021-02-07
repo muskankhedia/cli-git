@@ -8,4 +8,5 @@ require (
 	github.com/manifoldco/promptui v0.8.0
 	github.com/mbndr/figlet4go v0.0.0-20190224160619-d6cef5b186ea
 	github.com/pkg/browser v0.0.0-20210115035449-ce105d075bb4
+	golang.org/x/sys v0.0.0-20210124154548-22da62e12c0c // indirect
 )
