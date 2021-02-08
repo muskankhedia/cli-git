@@ -15,7 +15,7 @@ var cfgFile string
 var rootCmd = &cobra.Command{
 	Use:   "cli-git",
 	Short: "App to ease open your github repos",
-	Long: `App to ease open your github repos`,
+	Long:  `App to ease open your github repos`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	//	Run: func(cmd *cobra.Command, args []string) { },

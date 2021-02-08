@@ -1,6 +1,6 @@
 package utils
 
-type repoDetail struct {
+type RepoDetail struct {
 	Name    string `json:"name"`
 	URL     string `json:"url"`
 	PR      string `json:"pr"`
@@ -8,6 +8,6 @@ type repoDetail struct {
 	Visited int    `json:"visited"`
 }
 
-type repoDetails struct {
-	Details []repoDetail `json:"repos"`
+type RepoDetails struct {
+	Details []RepoDetail `json:"repos"`
 }

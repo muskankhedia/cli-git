@@ -2,21 +2,13 @@ package common
 
 import (
 	"errors"
-	"strconv"
-	"strings"
+	"net/url"
 )
 
 func ValidateEmptyInput(input string) error {
-	if len(strings.TrimSpace(input)) < 1 {
-		return errors.New("this input must not be empty")
-	}
-	return nil
-}
-
-func ValidateIntegerNumberInput(input string) error {
-	_, err := strconv.ParseInt(input, 0, 64)
-	if err != nil {
-		return errors.New("invalid number")
+	_, err := url.ParseRequestURI(input)
+	if err != nil && input != "exit" {
+		return errors.New("Please input a valid URL")
 	}
 	return nil
 }

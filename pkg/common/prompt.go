@@ -4,8 +4,7 @@ import (
 	"github.com/manifoldco/promptui"
 )
 
-
-func PromptString(name string) (string, error) {
+func PromptAddURL(name string) (string, error) {
 	prompt := promptui.Prompt{
 		Label:    name,
 		Validate: ValidateEmptyInput,
