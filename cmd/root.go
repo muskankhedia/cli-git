@@ -7,6 +7,7 @@ import (
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
+	"github.com/muskankhedia/cli-git/pkg/utils"
 )
 
 var cfgFile string
@@ -31,6 +32,8 @@ func Execute() {
 }
 
 func init() {
+	utils.ProjectText()
+
 	cobra.OnInitialize(initConfig)
 
 	// Here you will define your flags and configuration settings.

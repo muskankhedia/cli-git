@@ -21,7 +21,7 @@ var addCmd = &cobra.Command{
 				break
 			}
 			if err != nil {
-				panic(err)
+				break
 			}
 			addNewURL(url)
 		}
@@ -36,6 +36,13 @@ func addNewURL(url string) {
 	var res utils.RepoDetails
 
 	res = utils.LoadJsonFileData()
+
+	for _, v := range res.Details {
+		if(v.URL == url) {
+			fmt.Println("This URL already exists, try adding another URL")
+			return
+		}
+	}
 
 	repoURLArray := strings.Split(url, "/")
 	repoName := repoURLArray[len(repoURLArray)-1]
