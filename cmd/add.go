@@ -16,7 +16,7 @@ var addCmd = &cobra.Command{
 	Long:  `Add new URLs to the database`,
 	Run: func(cmd *cobra.Command, args []string) {
 		for {
-			url, err := common.PromptAddURL("Repo URL")
+			url, err := common.PromptURL("Repo URL")
 			if url == "exit" {
 				break
 			}
@@ -38,7 +38,7 @@ func addNewURL(url string) {
 	res = utils.LoadJsonFileData()
 
 	for _, v := range res.Details {
-		if(v.URL == url) {
+		if v.URL == url {
 			fmt.Println("This URL already exists, try adding another URL")
 			return
 		}
