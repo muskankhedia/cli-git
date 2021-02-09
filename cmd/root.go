@@ -7,7 +7,7 @@ import (
 
 	homedir "github.com/mitchellh/go-homedir"
 	"github.com/spf13/viper"
-	"github.com/muskankhedia/cli-git/pkg/utils"
+	// "github.com/muskankhedia/cli-git/pkg/utils"
 
 )
 
@@ -33,7 +33,7 @@ func Execute() {
 }
 
 func init() {
-	utils.ProjectText()
+	// utils.ProjectText()
 
 	cobra.OnInitialize(initConfig)
 

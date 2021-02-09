@@ -27,6 +27,7 @@ func SearchRepo(res utils.RepoDetails) {
 		for x, v := range res.Details {
 			if v.URL == input {
 				res.Details[x].Visited += 1
+				_ = utils.WriteJSONFileData(res)
 			}
 		}
 		_ = browser.OpenURL(input)
@@ -58,10 +59,7 @@ func SearchRepo(res utils.RepoDetails) {
 		Searcher: func(input string, idx int) bool {
 			repo := res.Details[idx]
 			title := strings.ToLower(repo.Name)
-			if strings.Contains(title, input) {
-				return true
-			}
-			return false
+			return strings.Contains(title, input)
 		},
 	}
 
