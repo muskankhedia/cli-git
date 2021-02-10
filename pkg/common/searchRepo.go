@@ -35,7 +35,7 @@ func SearchRepo(res utils.RepoDetails) {
 	}
 
 	templates := promptui.SelectTemplates{
-		Active:   `🌁 {{ .Name | cyan | bold }}`,
+		Active:   `▶ {{ .Name | cyan | bold }}`,
 		Inactive: `   {{ .Name | cyan }}`,
 		Selected: `{{ "✔" | green | bold }} {{ "Repo Visited" | bold }}: {{ .Name | cyan }} {{ .URL | openBrowser }}`,
 		Details: `Repo URL:
