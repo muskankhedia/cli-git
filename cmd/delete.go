@@ -11,8 +11,8 @@ import (
 // deleteCmd represents the delete command
 var deleteCmd = &cobra.Command{
 	Use:   "delete",
-	Short: "Delete a repo from the list",
-	Long:  `Delete a repo from the list`,
+	Short: "Delete the unrequired repos from the customised list manually",
+	Long:  `Delete the unrequired repos from the customised list manually`,
 	Run: func(cmd *cobra.Command, args []string) {
 		for {
 			url, err := common.PromptURL("Repo URL")

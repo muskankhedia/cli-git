@@ -12,8 +12,8 @@ import (
 // addCmd represents the add command
 var addCmd = &cobra.Command{
 	Use:   "add",
-	Short: "Add new URLs to the database",
-	Long:  `Add new URLs to the database`,
+	Short: "Add repos to the customised list manually",
+	Long:  `Add repos to the customised list manually`,
 	Run: func(cmd *cobra.Command, args []string) {
 		for {
 			url, err := common.PromptURL("Repo URL")

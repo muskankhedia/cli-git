@@ -1,5 +1,7 @@
 package utils
 
+const FilePath = "store.json"
+
 type RepoDetail struct {
 	Name    string `json:"name"`
 	URL     string `json:"url"`

@@ -9,7 +9,7 @@ import (
 // searchCmd represents the search command
 var searchCmd = &cobra.Command{
 	Use:   "search",
-	Short: "Search for a particular repo in the list",
+	Short: "Search for repositories in the list",
 	Long: ` This command helps you to search among the list of added repos sorted
 	based on recent search. You can use arrow keys to navigate in the list and enter 
 	key to open the repo link in a new browser tab.`,

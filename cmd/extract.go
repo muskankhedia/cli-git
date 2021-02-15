@@ -23,13 +23,8 @@ type userGithubRepo struct {
 // extractCmd represents the extract command
 var extractCmd = &cobra.Command{
 	Use:   "extract",
-	Short: "A brief description of your command",
-	Long: `A longer description that spans multiple lines and likely contains examples
-and usage of using your command. For example:
-
-Cobra is a CLI library for Go that empowers applications.
-This application is a tool to generate the needed files
-to quickly create a Cobra application.`,
+	Short: "Extract all the repos from the specified github username",
+	Long: `Extract all the repos from the specified github username`,
 	Run: func(cmd *cobra.Command, args []string) {
 		username, _ := common.GetUsernamePrompt()
 		extractGithubData(username)
@@ -57,8 +52,8 @@ func extractGithubData(username string) {
 			return
 		}
 
-		responseBytes, err := ioutil.ReadAll(resp.Body); 
-		
+		responseBytes, err := ioutil.ReadAll(resp.Body)
+
 		if err != nil {
 			log.Printf("Could not read response body. %v", err)
 		}
@@ -101,6 +96,6 @@ func addURLsToStore(listGithubRepos []userGithubRepo) {
 	}
 	err := utils.WriteJSONFileData(res)
 	if err != nil {
-		fmt.Println(err);
+		fmt.Println(err)
 	}
 }

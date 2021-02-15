@@ -7,8 +7,6 @@ import (
 	"os"
 )
 
-const filePath = "store.json"
-
 func fileExists(path string) bool {
 	_, err := os.Open(path) // For read access.
 	return err == nil
@@ -18,13 +16,13 @@ func LoadJsonFileData() RepoDetails {
 
 	var res RepoDetails
 
-	if !fileExists(filePath) {
-		_, e := os.Create(filePath)
+	if !fileExists(FilePath) {
+		_, e := os.Create(FilePath)
 		if e != nil {
 			log.Fatal(e)
 		}
 	}
-	content, err := ioutil.ReadFile(filePath)
+	content, err := ioutil.ReadFile(FilePath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -41,14 +39,14 @@ func WriteJSONFileData(data RepoDetails) error {
 		return error
 	}
 
-	if !fileExists(filePath) {
-		_, e := os.Create(filePath)
+	if !fileExists(FilePath) {
+		_, e := os.Create(FilePath)
 		if e != nil {
 			log.Fatal(e)
 		}
 	}
 
-	err := ioutil.WriteFile("./store.json", result, 0644)
+	err := ioutil.WriteFile(FilePath, result, 0644)
 	if err != nil {
 		return err
 	}
