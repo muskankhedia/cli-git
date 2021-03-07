@@ -12,7 +12,7 @@ The prerequisites for installing the project :
 1. Clone the repository in your GOPATH
 
     ```bash
-        $ go get https://github.com/muskankhedia/cli-git
+        $ go get github.com/muskankhedia/cli-git
         $ cd $GOPATH/src/github.com/muskankhedia/cli-git
     ```
 
